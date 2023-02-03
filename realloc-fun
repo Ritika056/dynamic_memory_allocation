@@ -1,0 +1,29 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main()
+{
+    int *ptr,n1,n2,i,sum;
+    printf("enter how many number to input: ");
+    scanf("%d", &n1);
+    ptr= (int *)malloc(n1*sizeof(int));
+   printf("enter elements: ");
+    for(i=0;i<n1;i++)
+    {
+        scanf("%d", (ptr+i));
+    }
+    printf("all the elements are: ");
+    for(i=0;i<n1;i++)
+    {
+        printf("%d ", *(ptr+i));
+    }
+     printf("\nenter new size: ");
+    scanf("%d", &n2);
+    ptr=realloc(ptr,n2*sizeof(int));
+    printf("Now all the elements are: ");
+    for(i=0;i<n2;++i)
+    {
+        printf("%d ", *(ptr+i));
+    }
+    free(ptr);
+    return 0;
+}
