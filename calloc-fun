@@ -1,0 +1,25 @@
+#include <stdlib.h>
+#include <stdio.h>
+int main()
+{
+    int *ptr,n,i,sum;
+    printf("enter how many times you want to enter: ");
+    scanf("%d", &n);
+    ptr= (int *)calloc(n,n*sizeof(int));
+    printf("enter elements: ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d", (ptr+i));
+    }
+    printf("all the elements are: ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ", *(ptr+i));
+    }
+     for(i=0;i<n;i++)
+    {
+        sum=sum+*(ptr+i);
+    }
+    printf("\nsum of all elements: %d ", sum);
+    return 0;
+}
